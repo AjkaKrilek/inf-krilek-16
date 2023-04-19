@@ -59,6 +59,6 @@ newfield = create2Dmatrix(width, height)
 while True:
     #print stary matrix
     #vypocitas novy matrix
-    #novy hodis do stareho
+    #novy hodis do stareho -> pomocou dvoch cyklov
     #novy musis vynulovat
 print(returnFriends(1,4,oldfield))
