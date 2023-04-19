@@ -22,11 +22,32 @@ def processfile(matrix):
 
 def returnFriends(x,y,matrix):
     count = 0
-    if i ==1:
-        count+=1
-    if x+1 ==1:
+    if x < width-1 and matrix [y][x+1] ==1:
         count=+1
-    if x
+    if x < width-1 and y > 0 and matrix [y-1][x+1] == 1:
+        count+=1
+    if y > 0 and matrix [y-1][x] == 1:
+        count+=1
+    if x > 0 and y > 0 and matrix [y-1][x-1] == 1:
+        count+=1
+    if x > 0 and matrix[y][x-1] == 1:
+        count+=1
+    if x > 0 and y< height-1 and matrix [y+1][x-1] == 1:
+        count+=1
+    if y < height-1 and matrix [y+1][x] == 1:
+        count+=1
+    if x < width-1 and y < height-1 and matrix [y+1][x+1] == 1:
+        count+=1
+
+def rewrite(oldfield, newfield):
+    for x in range (width):
+        for y in range(height):
+            if oldfield[y][x] == 1 and returnFriends == 2 and returnFriends ==3:
+                newfield [y][x] = 1
+            if oldfield [y][x] == 0 and returnFriends ==3:
+                newfield [y][x] =1
+
+
 
 width, height = fr.readline().split(' ')
 width = int(width)
@@ -35,5 +56,9 @@ height = int(height)
 oldfield = create2Dmatrix(width, height)
 #vytvori iny 2 rozmerny zoznam
 newfield = create2Dmatrix(width, height)
-#do prveho zoznamu nahodime jednotky zo suboru
-processfile(oldfield)
+while True:
+    #print stary matrix
+    #vypocitas novy matrix
+    #novy hodis do stareho
+    #novy musis vynulovat
+print(returnFriends(1,4,oldfield))
