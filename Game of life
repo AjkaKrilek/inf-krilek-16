@@ -122,3 +122,16 @@ generations()
 
 win.mainloop()
 #DÚ:doprogramovat tlacidlo aby tu dalsiu generaciu pocitalo po kroku
+
+def generations_click():
+    global old_field, new_field
+    draw_cells(old_field)
+    print(old_field)
+    rewrite(old_field, new_field)
+    old_field = new_field.copy()
+    new_field = create2Dmatrix(width, height)
+
+button = tk.Button(win, text="Automaticky", bg="purple", fg="white",font="Arial 18",command=lambda:generations())
+button.grid(column=0)
+click_button = tk.Button(win, text="Po kliknutí", bg="green", fg="white",font="Arial 18", command=lambda:generations_click())
+click_button.grid(row=1,column=1)
